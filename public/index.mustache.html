@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Fronts status</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body class="bluebell">
+		<main class="main-content">
+			<div class="row">
+				<div class="card card--stats">
+					<div class="card-visual">
+						<table class="sortable">
+							<thead>
+								<tr>
+									<th>Front</th>
+									<th>Priority</th>
+									<th>Last Updated</th>
+									<th>Expired <sup>*1</sup></th>
+									<th>Collections</th>
+									<th>Trails <sup>*2</sup></th>
+									<th>Backfilled</th>
+									<th>Traffic <sup>*3</sup></th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<td colspan="8">
+										<ul class="table-notes">
+											<li><sup>*1</sup> Using DFP information last updated on <span class="date">{{lastExpiredUpdated}}</span>.</li>
+											<li><sup>*2</sup> Number of trails in live collections, including draft content.</li>
+											<li><sup>*3</sup> Ophan hits in the last 15 days.</li>
+										</ul>
+									</td>
+								</tr>
+							</tfoot>
+							<tbody>
+								{{#fronts}}
+									<tr>
+										<td><a href="http://theguardian.com/{{id}}" target="_blank">{{id}}</a></td>
+										<td>{{priority}}</td>
+										<td>{{lastUpdated}}</td>
+										<td>{{expired}}</td>
+										<td class="number">{{collectionsCount}}</td>
+										<td class="number">{{trailsCount}}</td>
+										<td>{{backfilled}}</td>
+										<td sorttable_customkey="{{hits}}" class="number">{{traffic}}</td>
+									</tr>
+								{{/fronts}}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="card card--time">
+					<div class="card-content small">
+						<p>
+							Page created on <span class="date date--created">{{created}}</span>.
+						</p>
+						<p><a href="http://github.com/guardian/facia-tool-fronts-status">GitHub</a></p>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<script src="sorttable.js" async></script>
+	</body>
+</html>

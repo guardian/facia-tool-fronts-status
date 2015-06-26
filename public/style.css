@@ -1,0 +1,162 @@
+html {
+	font-size: 18px;
+	line-height: 1.5;
+	font-family: "Roboto", sans-serif;
+	font-weight: normal;
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	background-color: #c9e1cb;
+	margin: 0;
+}
+
+.main-content {
+	margin-top: 3em;
+}
+
+.row {
+	margin: auto;
+	min-width: 100px;
+	width: 80%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.col {
+	float: left;
+}
+.full {
+	width: 100%;
+}
+.half {
+	width: 50%;
+}
+.col.half:first-child {
+	padding-right: 0.2em;
+}
+.col.half:last-child {
+	padding-left: 0.2em;
+}
+
+.card {
+	position: relative;
+	overflow: hidden;
+	background-color: #F9F9FF;
+	border-radius: 2px;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	margin-bottom: 1em;
+}
+
+.card-content {
+	padding: 1.2em;
+	border-radius: 0 0 2px 2px;
+}
+.spring-green {
+	background-color: #89DA59;
+}
+.wave {
+	background-color: #66A5AD;
+}
+.sky {
+	background-color: #375E97;
+}
+.sunset {
+	background-color: #FB6542;
+}
+.burnt-orange {
+	background-color: #DE7A22;
+}
+.crimson {
+	background-color: #8D230F;
+}
+.hot-pink {
+	background-color: #F52549;
+}
+.sage {
+	background-color: #A1BE95;
+}
+.honeydew {
+	background-color: #E2DFA2;
+}
+.bluebell {
+	background-color: #92AAC7;
+}
+.linen {
+	background-color: #EAE2D6;
+}
+
+.table-notes {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	line-height: 1.5em;
+}
+
+.value {
+	font-weight: bold;
+	font-size: 200%;
+	display: block;
+}
+.number, .date {
+	font-family: monospace;
+}
+
+table {
+	width: 100%;
+	text-align: left;
+	border: none;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-bottom: 1em;
+}
+
+thead,
+thead tr,
+tbody tr {
+	border-bottom: 1px solid #d0d0d0;
+}
+
+th {
+	padding: 15px 5px;
+	vertical-align: baseline;
+}
+
+td {
+	padding: 0.7em 0;
+}
+
+sup {
+	font-size: 70%;
+}
+
+.card-visual td:first-child,
+.card-visual th:first-child {
+	padding-left: 1.2em;
+}
+.card-visual td:last-child,
+.card-visual th:last-child {
+	padding-right: 1.2em;
+}
+
+@media (max-width: 900px) {
+	.row {
+		width: 90%;
+	}
+	.main-content {
+		margin-top: 2em;
+	}
+}
+@media (max-width: 600px) {
+	.row {
+		width: 100%;
+	}
+	.main-content {
+		margin-top: 1em;
+	}
+}
