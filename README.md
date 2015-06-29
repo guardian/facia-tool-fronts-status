@@ -7,3 +7,5 @@ To work correctly it requires the following environment variables
 `OPHAN_BASE`=/path/to/ophan/histograms
 
 `OPHAN_API_KEY`=api-key
+
+It also requires AWS credentials somewhere.
