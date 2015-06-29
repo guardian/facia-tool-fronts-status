@@ -14,14 +14,14 @@
 						<table class="sortable">
 							<thead>
 								<tr>
-									<th>Front</th>
-									<th>Priority</th>
-									<th>Last Updated</th>
-									<th>Expired <sup>*1</sup></th>
-									<th>Collections</th>
-									<th>Trails <sup>*2</sup></th>
-									<th>Backfilled</th>
-									<th>Traffic <sup>*3</sup></th>
+									<th class="cell--large">Front</th>
+									<th class="cell--large">Priority</th>
+									<th class="cell--large">Last Edit</th>
+									<th class="cell--small">Expired <sup>*1</sup></th>
+									<th class="cell--small">Collections</th>
+									<th class="cell--small">Trails <sup>*2</sup></th>
+									<th class="cell--small">Backfilled</th>
+									<th class="cell--small">Traffic <sup>*3</sup></th>
 								</tr>
 							</thead>
 							<tfoot>
@@ -40,7 +40,7 @@
 									<tr>
 										<td><a href="http://theguardian.com/{{id}}" target="_blank">{{id}}</a></td>
 										<td>{{priority}}</td>
-										<td>{{lastUpdated}}</td>
+										<td sorttable_customkey="{{lastUpdated}}">{{lastUpdatedHuman}}</td>
 										<td>{{expired}}</td>
 										<td class="number">{{collectionsCount}}</td>
 										<td class="number">{{trailsCount}}</td>

@@ -1,11 +1,11 @@
 var express = require('express');
 var app = express();
-var Promise = require('native-promise-only');
+var Promise = require('bluebird');
 var moment = require('moment');
 var generate = require('./lib/generate');
 var serve = require('./lib/serve');
 
-Promise.resolve()
+Promise.resolve(['uk', 'global-development-professionals-network/adam-smith-international-partner-zone'])
 .then(generate)
 .then(startServer)
 .then(function (server) {

@@ -5,13 +5,14 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "async": "^1.2.1",
     "aws-s3-facia-tool": "^0.4.3",
+    "aws-sdk": "^2.1.36",
+    "bluebird": "^2.9.30",
     "express": "^4.13.0",
     "hogan.js": "^3.0.2",
+    "html-inline": "^1.1.1",
     "lodash": "^3.9.3",
     "moment": "^2.10.3",
-    "native-promise-only": "^0.8.0-a",
     "numeral": "^1.5.3",
     "request": "^2.58.0"
   },
