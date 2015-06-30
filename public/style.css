@@ -150,6 +150,21 @@ sup {
 	padding-right: 1.2em;
 }
 
+.filter--option {
+	display: inline-block;
+	min-width: 10em;
+}
+
+.filter--text {
+	max-width: 4em;
+	line-height: 2em;
+	margin-left: 0.5em;
+}
+
+.hidden {
+	display: none;
+}
+
 @media (max-width: 900px) {
 	.main-content {
 		margin-top: 2em;

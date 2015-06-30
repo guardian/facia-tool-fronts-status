@@ -5,7 +5,8 @@ var moment = require('moment');
 var generate = require('./lib/generate');
 var serve = require('./lib/serve');
 
-Promise.resolve(['uk', 'global-development-professionals-network/adam-smith-international-partner-zone'])
+Promise.resolve(['uk', 'us', 'au', 'charlottetest', 'career-choices',
+	'global-development-professionals-network/adam-smith-international-partner-zone'])
 .then(generate)
 .then(startServer)
 .then(function (server) {
