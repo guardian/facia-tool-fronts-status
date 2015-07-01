@@ -30,6 +30,7 @@ generate().then(function (updates) {
 				console.error('Something went wrong');
 				console.error(err);
 			} else {
+				console.log((new Date()).toString());
 				console.log('OK');
 			}
 		});

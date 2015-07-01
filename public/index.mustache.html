@@ -9,111 +9,146 @@
 	<body class="bluebell">
 		<main class="main-content">
 			<div class="row">
-				<div class="card card--filters">
-					<div class="card-content">
-						<table>
-							<tbody>
-								<tr>
-									<th>Priorities</th>
-									<td class="filter">
-										{{#priorities}}
+				<div class="col three-quarters">
+					<div class="card card--filters">
+						<div class="card-content">
+							<table>
+								<tbody>
+									<tr>
+										<th class="one-quarter">Priorities</th>
+										<td class="filter">
+											{{#priorities}}
+												<label class="filter--option">
+													<input class="filter--checkbox group--priority"
+														data-filter-by="text"
+														data-group="priority"
+														data-filter-cell="filterable--priority"
+														type="checkbox" value="{{.}}" checked>
+													<span class="filter--label">{{.}}</span>
+												</label>
+											{{/priorities}}
+										</td>
+									</tr>
+									<tr>
+										<th>Expired</th>
+										<td class="filter">
 											<label class="filter--option">
-												<input class="filter--checkbox group--priority"
+												<input class="filter--checkbox group--expired"
 													data-filter-by="text"
-													data-group="priority"
-													data-filter-cell="filterable--priority"
-													type="checkbox" value="{{.}}" checked>
-												<span class="filter--label">{{.}}</span>
+													data-group="expired"
+													data-filter-cell="filterable--expired"
+													type="checkbox" value="yes" checked>
+												<span class="filter--label">Yes</span>
 											</label>
-										{{/priorities}}
-									</td>
-								</tr>
-								<tr>
-									<th>Expired</th>
-									<td class="filter">
-										<label class="filter--option">
-											<input class="filter--checkbox group--expired"
-												data-filter-by="text"
-												data-group="expired"
-												data-filter-cell="filterable--expired"
-												type="checkbox" value="yes" checked>
-											<span class="filter--label">Yes</span>
-										</label>
-										<label class="filter--option">
-											<input class="filter--checkbox group--expired"
-												data-filter-by="text"
-												data-group="expired"
-												data-filter-cell="filterable--expired"
-												type="checkbox" value="no" checked>
-											<span class="filter--label">No</span>
-										</label>
-									</td>
-								</tr>
-								<tr>
-									<th>Collections</th>
-									<td class="filter">
-										<label class="filter--option">
-											<span class="filter--label">more than</span>
-											<input class="filter--text group--collections"
-												data-filter-by="min"
-												data-group="collections"
-												data-filter-cell="filterable--collections"
-												type="text" placeholder="min">
-										</label>
-										<label class="filter--option">
-											<span class="filter--label">less than</span>
-											<input class="filter--text group--collections"
-												data-filter-by="max"
-												data-group="collections"
-												data-filter-cell="filterable--collections"
-												type="text" placeholder="max">
-										</label>
-									</td>
-								</tr>
-								<tr>
-									<th>Trails</th>
-									<td class="filter">
-										<label class="filter--option">
-											<span class="filter--label">more than</span>
-											<input class="filter--text group--trails"
-												data-filter-by="min"
-												data-group="trails"
-												data-filter-cell="filterable--trails"
-												type="text" placeholder="min">
-										</label>
-										<label class="filter--option">
-											<span class="filter--label">less than</span>
-											<input class="filter--text group--trails"
-												data-filter-by="max"
-												data-group="trails"
-												data-filter-cell="filterable--trails"
-												type="text" placeholder="max">
-										</label>
-									</td>
-								</tr>
-								<tr>
-									<th>Backfilled</th>
-									<td class="filter">
-										<label class="filter--option">
-											<input class="filter--checkbox group--backfilled"
-												data-filter-by="text"
-												data-group="backfilled"
-												data-filter-cell="filterable--backfilled"
-												type="checkbox" value="yes" checked>
-											<span class="filter--label">Yes</span>
-										</label>
-										<label class="filter--option">
-											<input class="filter--checkbox group--backfilled"
-												data-filter-by="text"
-												data-group="backfilled"
-												data-filter-cell="filterable--backfilled"
-												type="checkbox" value="no" checked>
-											<span class="filter--label">No</span>
-										</label>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+											<label class="filter--option">
+												<input class="filter--checkbox group--expired"
+													data-filter-by="text"
+													data-group="expired"
+													data-filter-cell="filterable--expired"
+													type="checkbox" value="no" checked>
+												<span class="filter--label">No</span>
+											</label>
+										</td>
+									</tr>
+									<tr>
+										<th>Collections</th>
+										<td class="filter">
+											<label class="filter--option">
+												<span class="filter--label">more than</span>
+												<input class="filter--text group--collections"
+													data-filter-by="min"
+													data-group="collections"
+													data-filter-cell="filterable--collections"
+													type="text" placeholder="min">
+											</label>
+											<label class="filter--option">
+												<span class="filter--label">less than</span>
+												<input class="filter--text group--collections"
+													data-filter-by="max"
+													data-group="collections"
+													data-filter-cell="filterable--collections"
+													type="text" placeholder="max">
+											</label>
+										</td>
+									</tr>
+									<tr>
+										<th>Trails</th>
+										<td class="filter">
+											<label class="filter--option">
+												<span class="filter--label">more than</span>
+												<input class="filter--text group--trails"
+													data-filter-by="min"
+													data-group="trails"
+													data-filter-cell="filterable--trails"
+													type="text" placeholder="min">
+											</label>
+											<label class="filter--option">
+												<span class="filter--label">less than</span>
+												<input class="filter--text group--trails"
+													data-filter-by="max"
+													data-group="trails"
+													data-filter-cell="filterable--trails"
+													type="text" placeholder="max">
+											</label>
+										</td>
+									</tr>
+									<tr>
+										<th>Backfilled</th>
+										<td class="filter">
+											<label class="filter--option">
+												<input class="filter--checkbox group--backfilled"
+													data-filter-by="text"
+													data-group="backfilled"
+													data-filter-cell="filterable--backfilled"
+													type="checkbox" value="yes" checked>
+												<span class="filter--label">Yes</span>
+											</label>
+											<label class="filter--option">
+												<input class="filter--checkbox group--backfilled"
+													data-filter-by="text"
+													data-group="backfilled"
+													data-filter-cell="filterable--backfilled"
+													type="checkbox" value="no" checked>
+												<span class="filter--label">No</span>
+											</label>
+										</td>
+									</tr>
+									<tr>
+										<th>Traffic</th>
+										<td class="filter">
+											<label class="filter--option">
+												<span class="filter--label">more than</span>
+												<input class="filter--text group--traffic"
+													data-filter-by="min"
+													data-group="traffic"
+													data-filter-cell="filterable--traffic"
+													type="text" placeholder="min">
+											</label>
+											<label class="filter--option">
+												<span class="filter--label">less than</span>
+												<input class="filter--text group--traffic"
+													data-filter-by="max"
+													data-group="traffic"
+													data-filter-cell="filterable--traffic"
+													type="text" placeholder="max">
+											</label>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<div class="col one-quarter">
+					<div class="card card--notes">
+						<div class="card-content">
+							<p>
+								Page created on <br>
+								<span class="date date--created">{{created}}</span>.
+							</p>
+							<p><a href="http://github.com/guardian/facia-tool-fronts-status">GitHub</a></p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -155,22 +190,11 @@
 										<td class="filterable--collections" class="number">{{collectionsCount}}</td>
 										<td class="filterable--trails" class="number">{{trailsCount}}</td>
 										<td class="filterable--backfilled">{{backfilled}}</td>
-										<td sorttable_customkey="{{hits}}" class="number">{{traffic}}</td>
+										<td class="filterable--traffic" sorttable_customkey="{{hits}}" class="number">{{traffic}}</td>
 									</tr>
 								{{/fronts}}
 							</tbody>
 						</table>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="card card--time">
-					<div class="card-content small">
-						<p>
-							Page created on <span class="date date--created">{{created}}</span>.
-						</p>
-						<p><a href="http://github.com/guardian/facia-tool-fronts-status">GitHub</a></p>
 					</div>
 				</div>
 			</div>

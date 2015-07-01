@@ -14,7 +14,7 @@ var filters = {
     },
     value: function (column, bound) {
         appliedFilters[column] = function (cell) {
-            var cellValue = parseNumber(cell.textContent.trim());
+            var cellValue = parseNumber(cell.getAttribute('sorttable_customkey') || cell.textContent.trim());
 
             return (bound.min != null && cellValue < bound.min) ||
                     (bound.max != null && cellValue > bound.max);
@@ -62,9 +62,8 @@ function minMaxValues(key) {
 }
 
 function parseNumber(val) {
-    // TODO it should understand human values?
     if (val != null && val !== '') {
-        return Number(val).valueOf();
+        return unformatNumeral(val);
     }
     return null;
 }
@@ -96,5 +95,31 @@ $('.filter').forEach(function (filter) {
         filter.addEventListener('click', filterHandler);
         filter.addEventListener('input', filterHandler);
 });
+
+
+// Extracted from numeral.js in package.json
+function unformatNumeral (string) {
+	var stringOriginal = string,
+		thousandRegExp,
+		millionRegExp,
+		billionRegExp,
+        value;
+
+	// see if abbreviations are there so that we can multiply to the correct number
+	thousandRegExp = new RegExp('[^a-zA-Z]k(?:\\)|(\\£)?(?:\\))?)?$');
+	millionRegExp = new RegExp('[^a-zA-Z]m(?:\\)|(\\£)?(?:\\))?)?$');
+	billionRegExp = new RegExp('[^a-zA-Z]b(?:\\)|(\\£)?(?:\\))?)?$');
+
+	// do some math to create our number
+	value = (
+        ((stringOriginal.match(thousandRegExp)) ? Math.pow(10, 3) : 1) *
+        ((stringOriginal.match(millionRegExp)) ? Math.pow(10, 6) : 1) *
+        ((stringOriginal.match(billionRegExp)) ? Math.pow(10, 9) : 1) *
+        (((string.split('-').length + Math.min(string.split('(').length-1, string.split(')').length-1)) % 2)? 1: -1) *
+        Number(string.replace(/[^0-9\.]+/g, ''))
+    );
+
+	return value;
+}
 
 }();

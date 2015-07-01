@@ -37,10 +37,16 @@ body {
 .half {
 	width: 50%;
 }
-.col.half:first-child {
+.one-quarter {
+	width: 25%;
+}
+.three-quarters {
+	width: 75%;
+}
+.col:first-child {
 	padding-right: 0.2em;
 }
-.col.half:last-child {
+.col:last-child {
 	padding-left: 0.2em;
 }
 
