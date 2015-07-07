@@ -24,7 +24,7 @@ function startServer (table) {
 	return new Promise(function (resolve) {
 		app.get('/', function (req, res) {
 			res.send(serve({
-				created: moment(pageCreated).format('YYYY-MM-DD HH:mm'),
+				created: moment(pageCreated),
 				value: store
 			}));
 		});

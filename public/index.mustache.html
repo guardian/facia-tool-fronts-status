@@ -30,6 +30,31 @@
 										</td>
 									</tr>
 									<tr>
+										<th class="one-quarter">Last Edit</th>
+										<td class="filter">
+											<label class="filter--option">
+												<span class="filter--label">more than</span>
+												<input class="filter--date group--edit"
+													data-filter-by="min"
+													data-group="edit"
+													data-filter-cell="filterable--edit"
+													data-is-date='true'
+													type="text" placeholder="min">
+												ago
+											</label>
+											<label class="filter--option">
+												<span class="filter--label">less than</span>
+												<input class="filter--date group--edit"
+													data-filter-by="max"
+													data-group="edit"
+													data-filter-cell="filterable--edit"
+													data-is-date='true'
+													type="text" placeholder="max">
+												ago
+											</label>
+										</td>
+									</tr>
+									<tr>
 										<th>Expired</th>
 										<td class="filter">
 											<label class="filter--option">
@@ -140,14 +165,21 @@
 					</div>
 				</div>
 
-				<div class="col one-quarter">
+				<div class="col vertical one-quarter">
 					<div class="card card--notes">
 						<div class="card-content">
 							<p>
 								Page created on <br>
-								<span class="date date--created">{{created}}</span>.
+								<span class="date date--created" data-timestamp="{{createdTimestamp}}">{{created}}</span>.
 							</p>
 							<p><a href="http://github.com/guardian/facia-tool-fronts-status">GitHub</a></p>
+						</div>
+					</div>
+					<div class="card card--notes">
+						<div class="card-content">
+							<p>
+								Showing <span class="number fronts--count">{{fronts.length}}</span> fronts.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -185,7 +217,7 @@
 									<tr class="filterable">
 										<td><a href="http://theguardian.com/{{id}}" target="_blank">{{id}}</a></td>
 										<td class="filterable--priority">{{priority}}</td>
-										<td sorttable_customkey="{{lastUpdated}}">{{lastUpdatedHuman}}</td>
+										<td class="filterable--edit" sorttable_customkey="{{lastUpdated}}">{{lastUpdatedHuman}}</td>
 										<td class="filterable--expired">{{expired}}</td>
 										<td class="filterable--collections" class="number">{{collectionsCount}}</td>
 										<td class="filterable--trails" class="number">{{trailsCount}}</td>
@@ -200,7 +232,8 @@
 			</div>
 		</main>
 
-		<script src="sorttable.js" async></script>
-		<script src="filter.js" async></script>
+		<script src="sorttable.js"></script>
+		<script src="moment.min.js"></script>
+		<script src="filter.js"></script>
 	</body>
 </html>
