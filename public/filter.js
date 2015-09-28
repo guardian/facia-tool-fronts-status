@@ -1,3 +1,4 @@
+/* globals moment */
 !function () {
 
 var $ = function () {
@@ -40,6 +41,17 @@ var filters = {
                 if (max && max.isAfter(value, bound.max.unit)) {
                     return true;
                 }
+                return false;
+            }
+        };
+    },
+    select: function (column, selected) {
+        appliedFilters[column] = function (cell) {
+            var cellValue = cell.textContent.trim();
+
+            if (selected) {
+                return selected !== cellValue;
+            } else {
                 return false;
             }
         };
@@ -99,6 +111,10 @@ function parseNumber (val) {
     return null;
 }
 
+function selectedValue (select) {
+    return select.value;
+}
+
 function filterHandler (evt) {
     var classlist = evt.target.classList,
         by,
@@ -123,6 +139,12 @@ function filterHandler (evt) {
         column = evt.target.dataset.filterCell;
         group = evt.target.dataset.group;
         values = minMaxValues(group);
+
+    } else if (classlist.contains('filter--select')) {
+        by = 'select';
+        column = evt.target.dataset.filterCell;
+        values = selectedValue(evt.target);
+
     } else {
         return;
     }
@@ -132,8 +154,8 @@ function filterHandler (evt) {
 }
 
 $('.filter').forEach(function (filter) {
-        filter.addEventListener('click', filterHandler);
-        filter.addEventListener('input', filterHandler);
+    filter.addEventListener('click', filterHandler);
+    filter.addEventListener('input', filterHandler);
 });
 
 

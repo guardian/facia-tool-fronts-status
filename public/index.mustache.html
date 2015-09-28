@@ -139,6 +139,23 @@
 										</td>
 									</tr>
 									<tr>
+										<th>Group</th>
+										<td class="filter">
+											<label class="filter--option">
+												<select class="filter--select"
+													data-filter-by="text"
+													data-filter-cell="filterable--group"
+												>
+														<option value="">-- Select a group --</option>
+													{{#frontGroups}}
+														<option value="{{value}}">{{value}}</option>
+													{{/frontGroups}}
+														<option value="Other">Other</option>
+												</select>
+											</label>
+										</td>
+									</tr>
+									<tr>
 										<th>Traffic</th>
 										<td class="filter">
 											<label class="filter--option">
@@ -198,6 +215,7 @@
 									<th class="cell--small">Collections</th>
 									<th class="cell--small">Trails <sup>*2</sup></th>
 									<th class="cell--small">Backfilled</th>
+									<th class="cell--small">Group</th>
 									<th class="cell--small">Traffic <sup>*3</sup></th>
 								</tr>
 							</thead>
@@ -222,6 +240,7 @@
 										<td class="filterable--collections" class="number">{{collectionsCount}}</td>
 										<td class="filterable--trails" class="number">{{trailsCount}}</td>
 										<td class="filterable--backfilled">{{backfilled}}</td>
+										<td class="filterable--group">{{group}}{{^group}}Other{{/group}}</td>
 										<td class="filterable--traffic" sorttable_customkey="{{hits}}" class="number">{{traffic}}</td>
 									</tr>
 								{{/fronts}}

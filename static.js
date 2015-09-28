@@ -8,7 +8,7 @@ var path = require('path');
 
 generate().then(function (updates) {
 	var body = serve({
-		created: moment().format('YYYY-MM-DD HH:mm'),
+		created: moment(),
 		value: updates
 	});
 
