@@ -20,7 +20,7 @@ generate().then(function (updates) {
 	extract(BodyStream, function (inlined) {
 		var s3 = new AWS.S3();
 		s3.upload({
-			Bucket: 'aws-frontend-metrics',
+			Bucket: 'auditing-store',
 			Key: 'front-stats/index.html',
 			Body: inlined,
 			ContentType: 'text/html; charset=UTF-8',
